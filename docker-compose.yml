@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      - N8N_CONTACT_WEBHOOK=${N8N_CONTACT_WEBHOOK}
+    volumes:
+      - ./backend:/app
+
+  n8n:
+    image: n8nio/n8n:latest
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_PORT=5678
+      - NODE_ENV=production
+    volumes:
+      - n8n_data:/home/node/.n8n
+
+volumes:
+  n8n_data:
