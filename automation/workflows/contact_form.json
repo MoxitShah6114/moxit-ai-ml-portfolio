@@ -1,0 +1,22 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.SMTP_SERVER }}",
+        "authentication": "genericCredentialType",
+        "genericCredentialType": {
+          "username": "={{ $env.SMTP_USER }}",
+          "password": "={{ $env.SMTP_PASS }}"
+        }
+      },
+      "id": "email-sender",
+      "name": "Send Email",
+      "type": "n8n-nodes-base.httpRequest"
+    }
+  ],
+  "connections": {},
+  "active": true,
+  "nodeDistance": 250,
+  "pinData": {}
+}
