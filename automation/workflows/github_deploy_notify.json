@@ -1,0 +1,17 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.DISCORD_WEBHOOK }}"
+      },
+      "id": "notify-discord",
+      "name": "Discord Notification",
+      "type": "n8n-nodes-base.httpRequest"
+    }
+  ],
+  "connections": {},
+  "active": true,
+  "nodeDistance": 250,
+  "pinData": {}
+}
